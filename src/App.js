@@ -1,10 +1,18 @@
+import React, { Fragment } from "react"; 
+import Navbar from "./components/Layout/Navbar"; 
+import Landing from "./components/Layout/Landing"; 
+import  { Provider } from "react-redux"; 
+import  store  from "./components/store/store";
 
-
-function App() {
+const  App = () =>  {
   return (
-    <div className="App">
-      <p>hello</p>
-    </div>
+    <Provider store = {store}>
+    <>
+    <h1>hello</h1>
+    <Navbar/>
+    <Landing/>
+    </>
+    </Provider>
   );
 }
 
