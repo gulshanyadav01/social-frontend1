@@ -9,6 +9,7 @@ import setAuthToken from "./utils/setAuthToken";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"; 
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/Routing/PrivateRoute"; 
+import CreateProfile from  "./components/profile-form/CreateProfile";
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -27,6 +28,7 @@ const  App = () =>  {
         <Navbar/>
         <Landing/>
         <PrivateRoute exact path = "/dashboard" component = {Dashboard}/>
+        <PrivateRoute exact path = "/createprofile" component = {CreateProfile}/>
         <Switch>
           <Alert/>
         </Switch>

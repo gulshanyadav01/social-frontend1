@@ -4,7 +4,8 @@ import {REGISTER_FAIL,
     AUTH_ERROR, 
     LOGIN_SUCCESS,
     LOGIN_FAIL,
-    LOGOUT
+    LOGOUT,
+    CLEAR_PROFILE
 } from "./Types"; 
 import axios from "axios"; 
 import {setAlert} from "./alert"; 
@@ -113,5 +114,9 @@ export const login  = ({ email, password }) => async dispatch =>  {
 export const logout = () => dispatch => {
     dispatch({
         type: LOGOUT
+    })
+    
+    dispatch({
+        type:CLEAR_PROFILE
     })
 }

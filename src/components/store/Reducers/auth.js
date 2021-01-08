@@ -16,7 +16,7 @@ const initialState = {
 
 }
 
-export const authReducer = (state = initialState, action) => {
+export default  function (state = initialState, action) {
     
     switch(action.type){
         case USER_LOADED:
