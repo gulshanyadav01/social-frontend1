@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import { connect } from "react-redux"; 
 import {setAlert}  from "../store/Actions/alert"; 
 import PropTypes from "prop-types"
+import {register} from "../store/Actions/auth"; 
 
- const Register = ({setAlert}) => {
+ const Register = ({setAlert, register}) => {
 
      const [formData, setFormData] = useState({
          name:"",
@@ -23,7 +24,8 @@ import PropTypes from "prop-types"
             setAlert("password do not match", 'danger');  
          }
          else{
-             console.log(formData);
+            //  console.log(formData);
+             register({name, email, password}); 
          }
          
      }
@@ -82,8 +84,9 @@ import PropTypes from "prop-types"
 }
 
 Register.propTypes = {
-    setAlert: PropTypes.func.isRequired
+    setAlert: PropTypes.func.isRequired,
+    register: PropTypes.func.isRequired,
 }
 
 
-export default connect(null, {setAlert})(Register); 
+export default connect(null, {setAlert, register})(Register); 
