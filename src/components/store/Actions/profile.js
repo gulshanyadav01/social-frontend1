@@ -24,3 +24,19 @@ export const getCurrentProfile = () => async dispatch => {
 
     }
 }
+
+// create or update the profile
+
+export const createProfile = (formData, history, edit = false) => async dispatch  => {
+    try {
+        const config = {
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }
+    } catch (error) {
+        
+    }
+
+
+}
