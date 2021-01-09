@@ -4,7 +4,8 @@ import {connect} from "react-redux";
 import {getCurrentProfile} from "../../components/store/Actions/profile"; 
 import {Link} from "react-router-dom"; 
 import DashboardAction from './DashboardAction';
-
+import Experience from "./Experience"; 
+import Education from "./Education"; 
 
 const Dashboard = ({getCurrentProfile, auth: {user}, profile: {profile, loading}}) => {
 
@@ -17,6 +18,8 @@ const Dashboard = ({getCurrentProfile, auth: {user}, profile: {profile, loading}
     <DashboardAction/>
     <h3>welcome {user && user.name}</h3>
     {profile !== null ? <div>has</div> :<div><h1>please add some info </h1><Link to = "/"><button>login</button> </Link></div> }
+    <Experience experience = {profile.experience}/>
+    <Education education = {profile.education}/>
      </div>
 }
 
