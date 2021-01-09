@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from "react-redux"; 
 import {getCurrentProfile} from "../../components/store/Actions/profile"; 
 import {Link} from "react-router-dom"; 
+import DashboardAction from './DashboardAction';
 
 
 const Dashboard = ({getCurrentProfile, auth: {user}, profile: {profile, loading}}) => {
@@ -13,6 +14,7 @@ const Dashboard = ({getCurrentProfile, auth: {user}, profile: {profile, loading}
 
     return loading && profile === null ? (<div><h1>loading...</h1></div>): <div>
     <h1>Dashboard</h1>
+    <DashboardAction/>
     <h3>welcome {user && user.name}</h3>
     {profile !== null ? <div>has</div> :<div><h1>please add some info </h1><Link to = "/"><button>login</button> </Link></div> }
      </div>
