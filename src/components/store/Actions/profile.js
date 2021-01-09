@@ -3,7 +3,9 @@ import {setAlert} from "./alert";
 import {
     GET_PROFILE,
     PROFILE_ERROR,
-    UPDATE_PROFILE
+    UPDATE_PROFILE,
+    ACCOUNT_DELETED,
+    CLEAR_PROFILE
 } from "./Types";
 
 // GET THE CURRENT USER 
@@ -122,4 +124,75 @@ export const addEducation = (formData, history) => async dispatch => {
         }); 
 
     }
+}
+
+
+// delete experience 
+
+export const deleteExperience = id => async dispatch => {
+    try {
+        const res = await axios.delete(`http://localhost:5000/api/profile/experience/${id}`)
+        dispatch({
+            type:UPDATE_PROFILE,
+            payload: res.data
+        }); 
+        dispatch(setAlert("experience removed", 'success')); 
+
+    } catch (error) {
+        dispatch({
+            type: PROFILE_ERROR,
+            payload: {msg: error.response.statusText, status: error.response.status}
+        }); 
+        
+    }
+}
+
+// delete education 
+
+export const deleteEducation = id => async dispatch => {
+    console.log("hello")
+    try {
+        const res = await axios.delete(`http://localhost:5000/api/profile/education/${id}`)
+        dispatch({
+            type:UPDATE_PROFILE,
+            payload: res.data
+        }); 
+        dispatch(setAlert("education  removed", 'success')); 
+
+    } catch (error) {
+        dispatch({
+            type: PROFILE_ERROR,
+            payload: {msg: error.response.statusText, status: error.response.status}
+        }); 
+        
+    }
+}
+
+
+// delete account and profile 
+
+export const deleteAccount = () => async dispatch => {
+    if(window.confirm("are you sure this cannot be undone")){
+        try {
+            const res = await axios.delete(`http://localhost:5000/api/profile/`)
+            dispatch({
+                type:CLEAR_PROFILE
+            }); 
+            dispatch({
+                type:ACCOUNT_DELETED
+            })
+            
+
+            dispatch(setAlert("you account has been deleted", 'success')); 
+    
+        } catch (error) {
+            dispatch({
+                type: PROFILE_ERROR,
+                payload: {msg: error.response.statusText, status: error.response.status}
+            }); 
+            
+        }
+
+    }
+    
 }
