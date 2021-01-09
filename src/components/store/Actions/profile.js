@@ -159,6 +159,7 @@ export const deleteEducation = id => async dispatch => {
         }); 
         dispatch(setAlert("education  removed", 'success')); 
 
+
     } catch (error) {
         dispatch({
             type: PROFILE_ERROR,
@@ -171,10 +172,11 @@ export const deleteEducation = id => async dispatch => {
 
 // delete account and profile 
 
-export const deleteAccount = () => async dispatch => {
+export const deleteAccount = (history) => async dispatch => {
+    console.log("delete account"); 
     if(window.confirm("are you sure this cannot be undone")){
         try {
-            const res = await axios.delete(`http://localhost:5000/api/profile/`)
+                 await axios.delete(`http://localhost:5000/api/profile/`)
             dispatch({
                 type:CLEAR_PROFILE
             }); 
@@ -184,7 +186,7 @@ export const deleteAccount = () => async dispatch => {
             
 
             dispatch(setAlert("you account has been deleted", 'success')); 
-    
+            history.push("/login"); 
         } catch (error) {
             dispatch({
                 type: PROFILE_ERROR,

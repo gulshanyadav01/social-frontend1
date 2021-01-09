@@ -41,8 +41,9 @@ import { Redirect } from 'react-router-dom';
         <div>
             <form onSubmit = {onSubmit}>
                 
-                <div>
+                <div >
                     <input 
+                        className = "focus:ring-red-300 focus:ring-2"
                         type = "email"
                         placeholder = 'enter your email'
                         name = "email" 
