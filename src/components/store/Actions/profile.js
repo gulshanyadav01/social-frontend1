@@ -95,6 +95,7 @@ export const addExprience = (formData, history) => async dispatch => {
 
 // ADD educatoin 
 export const addEducation = (formData, history) => async dispatch => {
+    console.log('add education')
     try{
         const config = {
             headers:{
@@ -108,6 +109,7 @@ export const addEducation = (formData, history) => async dispatch => {
         }); 
         dispatch(setAlert("education added", 'success')); 
         history.push("/dashboard"); 
+
     }catch(err){
         const errors = err.response.data.errors; 
         if(errors){
