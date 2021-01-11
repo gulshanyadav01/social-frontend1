@@ -34,7 +34,7 @@ export const loadUser = () => async dispatch => {
 }
 
 // Register User 
-export const register = ({name, email, password }) => async dispatch =>  {
+export const register = ({name, email, password, history }) => async dispatch =>  {
     
     // const config = {
     //     headers: {
@@ -49,12 +49,16 @@ export const register = ({name, email, password }) => async dispatch =>  {
             password
         }
         const res  = await axios.post("http://localhost:5000/api/users", newUser); 
-        // console.log(res.data)
+        // console.logif(isAuthenticated){
+        //      console.log("hi")
+        //     return <Redirect to = "/dashboard" />
+        // }(res.data)
         dispatch({
             type: REGISTER_SUCCESS,
             payload:res.data
         }); 
         dispatch(loadUser());
+        history.push("/dashboard")
 
     }
     catch(err){
