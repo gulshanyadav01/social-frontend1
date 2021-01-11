@@ -5,6 +5,8 @@ import { getProfileById } from "../store/Actions/profile";
 import ProfileTop from "./ProfileTop"; 
 import ProfileAbout from "./ProfileAbout"
 import ProfileSkills from "./ProfileSkills";
+import ProfileExperience from "./ProfileExperience";
+import ProfileEducation from "./ProfileEducation"; 
 
 
 const Profile = ({  getProfileById ,match, profile:{profile, loading, auth, } }) => {
@@ -19,6 +21,11 @@ const Profile = ({  getProfileById ,match, profile:{profile, loading, auth, } })
                 <ProfileTop profile = {profile}/>
                 <ProfileAbout profile = {profile} />
                 <ProfileSkills profile = {profile} />
+                <div className = "w-full h-72 mt-4 flex rounded shadow bg-white ">
+                    <ProfileEducation/><hr className = "w-0.5 h-full bg-gray-200"></hr>
+                    <ProfileExperience/>
+                    
+                </div>
             </div>)}
         </div>
     )
