@@ -17,13 +17,13 @@ const Profile = ({  getProfileById ,match, profile:{profile, loading, auth, } })
     return (
         <div>
             {profile ===  null || loading ? <div>loading</div>:(
-            <div className = " ml-52 mt-20 mr-52  ">
+            <div className = " ml-8 mt-20 w-3/5  ">
                 <ProfileTop profile = {profile}/>
                 <ProfileAbout profile = {profile} />
                 <ProfileSkills profile = {profile} />
-                <div className = "w-full h-72 mt-4 flex rounded shadow bg-white ">
-                    <ProfileEducation/><hr className = "w-0.5 h-full bg-gray-200"></hr>
-                    <ProfileExperience/>
+                <div className = "w-full h-auto mt-4 flex rounded shadow bg-white ">
+                    <ProfileEducation profile = {profile}  /><hr className = "w-0.5 h-auto  bg-gray-300"></hr>
+                    <ProfileExperience profile = {profile} />
                     
                 </div>
             </div>)}

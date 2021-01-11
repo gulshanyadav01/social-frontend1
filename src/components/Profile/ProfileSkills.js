@@ -5,9 +5,9 @@ import { BiCheck } from "react-icons/bi"
 const ProfileSkills = ({profile:{skills}}) => {
     return (
         <div className = "w-full h-32 mt-4 rounded shadow bg-white">
-         <h1 className = "ml-72 font-bold text-xl capitalize mt-4"> Skills</h1>
+         <h1 className = "ml-8 font-medium text-xl capitalize "> Skills</h1>
          {/* <h2><BiCheck className = "inline"/>{skills[0]}</h2> */}
-         <div className = "flex ml-40">
+         <div className = "flex ml-8">
             {
                 skills.map((skill) => {
                     return(
