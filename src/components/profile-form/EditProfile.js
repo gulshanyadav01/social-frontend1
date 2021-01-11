@@ -40,21 +40,22 @@ const EditProfile = ({ profile: {profile, loading }, createProfile, getCurrentPr
     useEffect(() => {
         getCurrentProfile();
         setFormData({
-            company: loading || !profile.company? "": profile.company,
-            website: loading || !profile.website? "": profile.website,
-            location: loading || !profile.location? "": profile.location,
-            status: loading || !profile.status ? "": profile.status, 
-            skills: loading || !profile.skills ? "": profile.skills,
-            githubusername: loading || !profile.githubusername ? "": profile.githubusername,
-            bio: loading || !profile.bio ? "": profile.bio,
-            twitter: loading || !profile.social.twitter? "": profile.social.twitter,
-            facebook: loading || !profile.social.facebook ? "": profile.social.facebook,
-            linkedin: loading || !profile.social.linkedin ? "": profile.social.linkedin,
-            youtube: loading || !profile.social.youtube ? "": profile.social.youtube,
-            instagram: loading || !profile.social.instagram? "": profile.social.instagram
+
+            company: loading || profile.company=== null? " ": profile.company,
+            website: loading || profile.website=== null? " ": profile.website,
+            location: loading || profile.location=== null? " ": profile.location,
+            status: loading || profile.status=== null? " ": profile.status, 
+            skills: loading || profile.skills === null ? " ": profile.skills,
+            githubusername: loading || profile.githubusername === null ? " ": profile.githubusername,
+            bio: loading || profile.bio === null ? "": profile.bio,
+            twitter: loading || profile.social.twitter === null? " ": profile.social.twitter,
+            facebook: loading || profile.social.facebook === null ? " ": profile.social.facebook,
+            linkedin: loading || profile.social.linkedin === null ? " ": profile.social.linkedin,
+            youtube: loading || profile.social.youtube === null ? " ": profile.social.youtube,
+            instagram: loading || profile.social.instagram === null? " ": profile.social.instagram
         })
 
-    }, [loading]); 
+    }, [loading, getCurrentProfile]); 
 
     const {
         company,

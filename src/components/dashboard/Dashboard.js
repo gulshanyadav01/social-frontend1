@@ -19,13 +19,18 @@ const Dashboard = ({getCurrentProfile, deleteAccount,  auth: {user}, profile: {p
 
     <DashboardAction/>
     {/* <h3>welcome {user && user.name}</h3> */}
-    {profile !== null ? <div></div> :<div><h1>please add some info </h1><Link to = "/"><button>login</button> </Link></div> }
-    <Experience experience = {profile.experience !== null ? profile.experience : " "}/>
-    <hr className = "h-0.5 ml-4 w-3/5 bg-gray-500"></hr>
-    <Education education = {profile.education !== null ? profile.education: " "}/>
-    <div>
-        <button onClick = {() => deleteAccount(history)}>Delete Account</button>
+    {profile === null ? <div></div> :<div><h1>please add some info </h1><Link to = "/"><button>login</button> </Link></div> }
+    {profile !== null? (<div>
+        <Experience experience = {profile.experience !== null ? profile.experience : []}/>
+        <hr className = "h-0.5 ml-4 w-3/5 bg-gray-500"></hr>
+        <Education education = {profile.education !== null ? profile.education: []}/>
+        <div>
+            <button onClick = {() => deleteAccount(history)}>Delete Account</button>
+        </div>
+
     </div>
+    ): <div> <h1> please add some info </h1> </div>}
+   
      </div>
 }
 
