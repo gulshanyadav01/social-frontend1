@@ -38,12 +38,16 @@ import { Redirect } from 'react-router-dom';
      
 
     return (
-        <div>
-            <form onSubmit = {onSubmit}>
+        <div className = "mx-auto my-auto w-72 h-72 mt-32">
+            <form onSubmit = {onSubmit} >
+             <div className = "w-72 h-auto bg-white shadow-lg rounded">
+                <div className = "mt-8 mb-4 ml-20 ">
+                    <h1 className = "font-bold text-mango-600 underline">Login Yourself</h1>
+                </div>
                 
-                <div >
+                <div>
                     <input 
-                        className = "focus:ring-red-300 focus:ring-2"
+                        className = "focus:ring-red-400 focus:ring-2 px-2 py-2 m-2 w-11/12"
                         type = "email"
                         placeholder = 'enter your email'
                         name = "email" 
@@ -52,16 +56,21 @@ import { Redirect } from 'react-router-dom';
                     /> 
                 </div> 
                 <div>
-                    <input 
+                  
+                   <input 
+                        className = "focus:ring-red-400 focus:ring-2 px-2 py-2 m-2 w-11/12"
                         type = "password"
                         placeholder = 'enter your password'
                         name = "password" 
                         value = {password}
                         onChange = {(e) => onChange(e)}
+                        
                     /> 
+                   
                 </div> 
                 <div>
                     <input 
+                        className = "focus:ring-red-400 focus:ring-2 px-2 py-2 m-2 w-11/12"
                         type = "password"
                         placeholder = 'enter your password again'
                         name = "password2" 
@@ -71,10 +80,12 @@ import { Redirect } from 'react-router-dom';
                 </div> 
                 <div>
                     <input 
+                        className = " px-2 font-bold  py-2 m-2 w-11/12"
                         type = "submit"
-                        value = "sumbit" 
+                        value = "submit" 
                         
                     /> 
+                </div>
                 </div> 
             </form>
         </div>

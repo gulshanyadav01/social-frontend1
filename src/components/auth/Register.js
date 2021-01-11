@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import {setAlert}  from "../store/Actions/alert"; 
 import PropTypes from "prop-types"
 import {register} from "../store/Actions/auth"; 
+import { RiLockPasswordLine } from 'react-icons/ri';
 
  const Register = ({setAlert, register}) => {
 
@@ -60,14 +61,17 @@ import {register} from "../store/Actions/auth";
                     /> 
                 </div> 
                 <div>
-                    <input 
+                  
+                   <input 
                         className = "focus:ring-red-400 focus:ring-2 px-2 py-2 m-2 w-11/12"
                         type = "password"
                         placeholder = 'enter your password'
                         name = "password" 
                         value = {password}
                         onChange = {(e) => onChange(e)}
+                        
                     /> 
+                   
                 </div> 
                 <div>
                     <input 

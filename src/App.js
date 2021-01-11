@@ -14,6 +14,8 @@ import EditProfile from "./components/profile-form/EditProfile";
 import AddExperience from "./components/profile-form/AddExperience";
 import AddEducation from "./components/profile-form/AddEducation";
 import Register from "./components/auth/Register"; 
+import Login from "./components/auth/Login";
+import Upbar from "./components/Layout/Upbar";
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -33,15 +35,17 @@ const  App = () =>  {
             <div className = "flex flex-wrap">
                   <div className ="w-2/12 h-screen bg-gulshan-200 " >
                     <Navbar/>
-                    
                   </div>
-                  <div className = "w-10/12 h-screen bg-gulshan-50">
+                  <div className = "w-10/12 h-auto bg-gulshan-50">
+                    <Alert/>
+                    <Upbar/>
                     <PrivateRoute exact path = "/dashboard" component = {Dashboard}/>
                     <PrivateRoute exact path = "/createprofile" component = {CreateProfile}/>
                     <PrivateRoute exact path = "/edit-profile" component = {EditProfile}/>
                     <PrivateRoute exaxt path = "/add-experience" component = {AddExperience}/>
                     <PrivateRoute exaxt path = "/add-education" component = {AddEducation}/>
                     <Route exact path = "/register" component = {Register}/>
+                    <Route exact path = "/login" component = {Login}/>
                 </div>
             </div>
         </Switch>

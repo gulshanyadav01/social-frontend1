@@ -6,28 +6,43 @@ import { deleteEducation} from "../store/Actions/profile";
 
 const Education = ({education, deleteEducation}) => {
     const educations = education.map(exp =>(
-        <tr key = {exp._id}>
-            <td>{exp.school }</td>
-            <td>{exp.degree}</td>
-            <td>{exp.fieldOfStudy}</td>
-            <td>
-                <button onClick = {() => deleteEducation(exp._id)} >delete</button>
-            </td>
-        </tr>
+        <div className = "bg-white h-10 m-4 shadow w-3/5 rounded flex justify-between hover:ring-2 hover:ring-red-300">
+            <h1 className = "text-gray-800 font-medium m-2">{exp.degree}</h1><hr className = "w-0.5 h-full bg-gray-200"></hr>
+            <h1 className = "text-gray-800 font-medium m-2">{exp.school}</h1><hr className = "w-0.5 h-full bg-gray-200"></hr>
+            <h1 className = "text-gray-800 font-medium m-2">{exp.fieldOfStudy}</h1><hr className = "w-0.5 h-full bg-gray-200"></hr>
+            <button className = "text-gray-800  px-4 h-8 mt-1 mr-3 bg-red-500 py-2 rounded shadow-xl font-bold hover:bg-red-700 " onClick = {() => deleteEducation(exp._id)} >Delete</button>
+        </div>
+        // <tr key = {exp._id} className = " bg-red-500 mt-2 "> 
+        //     <div className = "h-20">
+        //         <h1>gulshan</h1>
+        //     </div>
+        //     {/* <td>{exp.company}</td>
+            
+        //     <td>{exp.title}</td>
+        //     <td>{exp.from}</td>
+        //     <td>
+        //        
+        //     </td> */}
+        // </tr>
     ) )
     return (
         <div>
-            <h2>Education Data</h2>
-            <table>
+            <h2 className = "uppercase mt-8 font-extrabold ml-6  mb-8">Education</h2>
+            {/* <table>
                 <thead>
                     <tr>
-                        <th>company</th>
-                        <th>Title</th>
-                        <th>years</th>
+                       
                     </tr>
                 </thead>
-                <tbody>{educations}</tbody>
-            </table>
+                {/* <tbody>{experiences}</tbody> */}
+            {/* </table> */}
+            <div className = "w-2/5 ml-6  flex justify-between">
+            <h1  className = "font-extrabold uppercase text-gray-500 ">Degree</h1>
+            <h1 className = "font-extrabold uppercase text-gray-500">School</h1>
+            <h1 className = "font-extrabold uppercase text-gray-500">fieldOfStudy</h1>
+            {/* <h1>""</h1> */}
+            </div>
+            {educations}
         </div>
     )
 }

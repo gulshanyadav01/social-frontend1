@@ -15,11 +15,13 @@ const Dashboard = ({getCurrentProfile, deleteAccount,  auth: {user}, profile: {p
     },[getCurrentProfile]); 
 
     return loading && profile === null ? (<div><h1>loading...</h1></div>): <div>
-    <h1>Dashboard</h1>
+    <h2 className = "uppercase mt-8 font-extrabold ml-6 text-xl  mb-8">Dashboard</h2>
+
     <DashboardAction/>
-    <h3>welcome {user && user.name}</h3>
-    {profile !== null ? <div>has</div> :<div><h1>please add some info </h1><Link to = "/"><button>login</button> </Link></div> }
+    {/* <h3>welcome {user && user.name}</h3> */}
+    {profile !== null ? <div></div> :<div><h1>please add some info </h1><Link to = "/"><button>login</button> </Link></div> }
     <Experience experience = {profile.experience !== null ? profile.experience : " "}/>
+    <hr className = "h-0.5 ml-4 w-3/5 bg-gray-500"></hr>
     <Education education = {profile.education !== null ? profile.education: " "}/>
     <div>
         <button onClick = {() => deleteAccount(history)}>Delete Account</button>
