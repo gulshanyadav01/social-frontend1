@@ -16,7 +16,8 @@ import AddEducation from "./components/profile-form/AddEducation";
 import Register from "./components/auth/Register"; 
 import Login from "./components/auth/Login";
 import Upbar from "./components/Layout/Upbar";
-import Profiles from "./components/Profile/Profiles"; 
+import Profiles from "./components/Profiles/Profiles"; 
+import Profile from "./components/Profile/Profile"
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -48,6 +49,7 @@ const  App = () =>  {
                     <PrivateRoute exaxt path = "/add-education" component = {AddEducation}/>
                     <Route exact path = "/register" component = {Register}/>
                     <Route exact path = "/login" component = {Login}/>
+                    <Route exact path = "/profile/:userId" component = {Profile}/>
                 </div>
             </div>
         </Switch>

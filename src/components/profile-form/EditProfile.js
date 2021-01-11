@@ -18,10 +18,8 @@ import { BsPeopleCircle } from "react-icons/bs";
 import { ImBackward } from "react-icons/im"
 // import { FaYoutube } from "react-icons/fa"
 
-
-const EditProfile = ({ profile: {profile, loading }, createProfile, getCurrentProfile,  history }) => {
-    const [formData, setFormData]  = useState({
-        company:"",
+const initialState = {
+    company:"",
         website:"",
         location:"",
         status:"",
@@ -33,33 +31,28 @@ const EditProfile = ({ profile: {profile, loading }, createProfile, getCurrentPr
         linkedin:"",
         youtube:"",
         instagram:""
-    }); 
+
+}
+
+const EditProfile = ({ profile: {profile, loading }, createProfile, getCurrentProfile,  history }) => {
+    const [formData, setFormData]  = useState(initialState); 
     const [socialLink, setSocialLink] = useState(false);
     
-
     useEffect(() => {
-       if(!profile ) getCurrentProfile();
-        if(profile === null){
-            setFormData({
-
-                company: loading || !profile && profile.company=== null? " ": profile.company,
-                website: loading || !profile && profile.website=== null? " ": profile.website,
-                location: loading || !profile && profile.location=== null? " ": profile.location,
-                status: loading ||  !profile && profile.status=== null? " ": profile.status, 
-                skills: loading || !profile && profile.skills === null ? " ": profile.skills,
-                githubusername: loading || !profile && profile.githubusername === null ? " ": profile.githubusername,
-                bio: loading || !profile && profile.bio === null ? "": profile.bio,
-                twitter: loading || !profile && profile.social.twitter === null? " ": profile.social.twitter,
-                facebook: loading ||!profile && profile.social.facebook === null ? " ": profile.social.facebook,
-                linkedin: loading || !profile && profile.social.linkedin === null ? " ": profile.social.linkedin,
-                youtube: loading || !profile && profile.social.youtube === null ? " ": profile.social.youtube,
-                instagram: loading ||  !profile && profile.social.instagram === null? " ": profile.social.instagram
-            })
-
+        if (!profile) getCurrentProfile();
+        if (!loading && profile) {
+          const profileData = { ...initialState };
+          for (const key in profile) {
+            if (key in profileData) profileData[key] = profile[key];
+          }
+          for (const key in profile.social) {
+            if (key in profileData) profileData[key] = profile.social[key];
+          }
+          if (Array.isArray(profileData.skills))
+            profileData.skills = profileData.skills.join(', ');
+          setFormData(profileData);
         }
-        
-
-    }, [loading, getCurrentProfile]); 
+      }, [loading, getCurrentProfile, profile]); 
 
     const {
         company,
