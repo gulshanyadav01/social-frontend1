@@ -17,7 +17,7 @@ const  Navbar = ({auth: {isAuthenticated, loading}, logout})  => {
     }
     const guestLink = (
         <div>
-            <h1  className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><FaPeopleCarry className = "inline text-royalblue-600 hover:text-white"/> Developers </h1>
+            <h1  className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><FaPeopleCarry className = "inline text-royalblue-600 hover:text-white"/> <Link to = "/profiles">Developers</Link> </h1>
             <h1 className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><FiLogIn className = "inline text-mango-600  hover:text-white"/>  <Link to = "/login">Login</Link></h1>
             <h1 className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3  font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><GoRocket className = "inline  text-gulshan-900 hover:text-white"/> <Link to = "/register" className = "active:text-blue-100">Register</Link> </h1>
         </div>
@@ -25,7 +25,7 @@ const  Navbar = ({auth: {isAuthenticated, loading}, logout})  => {
     const alwaysLink = (
         <div>
             <h1 className = 'mt-8 ml-4 mr-4  hover:bg-gulshan-300 px-2 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><GoDashboard className = "inline text-limegreen-500  hover:text-white " /><Link to =  "/dashboard"> Dashboard</Link></h1>
-            <h1  className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><FaPeopleCarry className = "inline text-royalblue-600 hover:text-white"/> Developers </h1>
+            <h1  className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><FaPeopleCarry className = "inline text-royalblue-600 hover:text-white"/> <Link to = "/profiles">Developers</Link> </h1>
            <h1 className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow ' ><button  onClick = {Logout} className = "font-bold"> <FiLogOut className = "inline text-red-700  hover:text-white"/> Logout </button></h1>
         </div>
     )

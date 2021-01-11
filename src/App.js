@@ -16,6 +16,7 @@ import AddEducation from "./components/profile-form/AddEducation";
 import Register from "./components/auth/Register"; 
 import Login from "./components/auth/Login";
 import Upbar from "./components/Layout/Upbar";
+import Profiles from "./components/Profile/Profiles"; 
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -38,7 +39,8 @@ const  App = () =>  {
                   </div>
                   <div className = "w-10/12 h-auto bg-gulshan-50">
                     <Alert/>
-                    <Upbar/>
+                    {/* <Upbar/> */}
+                    <Route exact path = "/profiles" component = {Profiles}/>
                     <PrivateRoute exact path = "/dashboard" component = {Dashboard}/>
                     <PrivateRoute exact path = "/createprofile" component = {CreateProfile}/>
                     <PrivateRoute exact path = "/edit-profile" component = {EditProfile}/>

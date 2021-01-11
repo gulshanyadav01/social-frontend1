@@ -15,7 +15,7 @@ const Dashboard = ({getCurrentProfile, deleteAccount,  auth: {user}, profile: {p
     },[getCurrentProfile]); 
 
     return loading && profile === null ? (<div><h1>loading...</h1></div>): <div>
-    <h2 className = "uppercase mt-8 font-extrabold ml-6 text-xl  mb-8">Dashboard</h2>
+    <h2 className = "uppercase mt-8 font-extrabold ml-6 text-xl   mb-8">Dashboard</h2>
 
     <DashboardAction/>
     {/* <h3>welcome {user && user.name}</h3> */}

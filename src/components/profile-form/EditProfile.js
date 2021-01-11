@@ -38,22 +38,26 @@ const EditProfile = ({ profile: {profile, loading }, createProfile, getCurrentPr
     
 
     useEffect(() => {
-        getCurrentProfile();
-        setFormData({
+       if(!profile ) getCurrentProfile();
+        if(profile === null){
+            setFormData({
 
-            company: loading || profile.company=== null? " ": profile.company,
-            website: loading || profile.website=== null? " ": profile.website,
-            location: loading || profile.location=== null? " ": profile.location,
-            status: loading || profile.status=== null? " ": profile.status, 
-            skills: loading || profile.skills === null ? " ": profile.skills,
-            githubusername: loading || profile.githubusername === null ? " ": profile.githubusername,
-            bio: loading || profile.bio === null ? "": profile.bio,
-            twitter: loading || profile.social.twitter === null? " ": profile.social.twitter,
-            facebook: loading || profile.social.facebook === null ? " ": profile.social.facebook,
-            linkedin: loading || profile.social.linkedin === null ? " ": profile.social.linkedin,
-            youtube: loading || profile.social.youtube === null ? " ": profile.social.youtube,
-            instagram: loading || profile.social.instagram === null? " ": profile.social.instagram
-        })
+                company: loading || !profile && profile.company=== null? " ": profile.company,
+                website: loading || !profile && profile.website=== null? " ": profile.website,
+                location: loading || !profile && profile.location=== null? " ": profile.location,
+                status: loading ||  !profile && profile.status=== null? " ": profile.status, 
+                skills: loading || !profile && profile.skills === null ? " ": profile.skills,
+                githubusername: loading || !profile && profile.githubusername === null ? " ": profile.githubusername,
+                bio: loading || !profile && profile.bio === null ? "": profile.bio,
+                twitter: loading || !profile && profile.social.twitter === null? " ": profile.social.twitter,
+                facebook: loading ||!profile && profile.social.facebook === null ? " ": profile.social.facebook,
+                linkedin: loading || !profile && profile.social.linkedin === null ? " ": profile.social.linkedin,
+                youtube: loading || !profile && profile.social.youtube === null ? " ": profile.social.youtube,
+                instagram: loading ||  !profile && profile.social.instagram === null? " ": profile.social.instagram
+            })
+
+        }
+        
 
     }, [loading, getCurrentProfile]); 
 
