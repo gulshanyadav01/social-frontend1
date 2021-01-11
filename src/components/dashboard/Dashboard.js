@@ -19,7 +19,7 @@ const Dashboard = ({getCurrentProfile, deleteAccount,  auth: {user}, profile: {p
 
     <DashboardAction/>
     {/* <h3>welcome {user && user.name}</h3> */}
-    {profile === null ? <div></div> :<div><h1>please add some info </h1><Link to = "/"><button>login</button> </Link></div> }
+    {profile === null ? <div> </div> :<div></div> }
     {profile !== null? (<div>
         <Experience experience = {profile.experience !== null ? profile.experience : []}/>
         <hr className = "h-0.5 ml-4 w-3/5 bg-gray-500"></hr>
@@ -29,7 +29,7 @@ const Dashboard = ({getCurrentProfile, deleteAccount,  auth: {user}, profile: {p
         </div>
 
     </div>
-    ): <div> <h1> please add some info </h1> </div>}
+    ): <div> <Link to = "/createProfile" className = "px-3  py-2 bg-blue-200 hover:bg-blue-300 rounded m-4 shadow  "> CreateProfile </Link> </div>}
    
      </div>
 }

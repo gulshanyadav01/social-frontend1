@@ -38,7 +38,7 @@ const  Navbar = ({auth: {isAuthenticated, loading}, logout})  => {
             <div className ="w-50 m-4 h-52 border-1 border-gray-100   shadow rounded">
             <div className = "w-50 rounded-t h-8 bg-gulshan-lin">
                 {/* <h1 className = "w-20 h-20 border-white border-4 rounded-full bg-cerise-500 hover:bg-cerise-600  m-auto"> </h1> */}
-                <img src = {Logo} alt = "images"  className = "w-20 h-20 border-white border-4 rounded-full m-auto"/>
+                 <img src = {Logo} alt = "images"  className = "w-20 h-20 border-white border-4 rounded-full m-auto"/>
                 <h1 className = "ml-10 capitalize font-bold hover:underline  ">gulshan yadav</h1>
             </div>
             </div>

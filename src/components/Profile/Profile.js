@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import {connect} from "react-redux"
 import { getProfileById } from "../store/Actions/profile"; 
 import ProfileTop from "./ProfileTop"; 
+import ProfileAbout from "./ProfileAbout"
+import ProfileSkills from "./ProfileSkills";
 
 
 const Profile = ({  getProfileById ,match, profile:{profile, loading, auth, } }) => {
@@ -12,7 +14,12 @@ const Profile = ({  getProfileById ,match, profile:{profile, loading, auth, } })
     },[getProfileById]); 
     return (
         <div>
-            {profile ===  null || loading ? <div>loading</div>:(<div className = " ml-52 mt-20 mr-52  "><ProfileTop profile = {profile}/></div>)}
+            {profile ===  null || loading ? <div>loading</div>:(
+            <div className = " ml-52 mt-20 mr-52  ">
+                <ProfileTop profile = {profile}/>
+                <ProfileAbout profile = {profile} />
+                <ProfileSkills profile = {profile} />
+            </div>)}
         </div>
     )
 }
