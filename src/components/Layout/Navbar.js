@@ -8,7 +8,8 @@ import {FaPeopleCarry } from "react-icons/fa"
 import { FiLogIn } from "react-icons/fi";
 import { FiLogOut } from "react-icons/fi";
 import { GoRocket } from "react-icons/go"
-import Logo from "../../asset/images/gulshan1.png"; 
+import Logo from "../../asset/images/gulshan1.png";
+import { CgFeed } from "react-icons/cg"; 
 // import {alert} from "./alert";
 // import Alert from "./alert"; 
 
@@ -28,7 +29,8 @@ const  Navbar = ({auth: {isAuthenticated, loading}, logout})  => {
         <div>
             <h1 className = 'mt-8 ml-4 mr-4  hover:bg-gulshan-300 px-2 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><GoDashboard className = "inline text-limegreen-500  hover:text-white " /><Link to =  "/dashboard"> Dashboard</Link></h1>
             <h1  className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><FaPeopleCarry className = "inline text-royalblue-600 hover:text-white"/> <Link to = "/profiles">Developers</Link> </h1>
-           <h1 className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow ' ><button  onClick = {Logout} className = "font-bold"> <FiLogOut className = "inline text-red-700  hover:text-white"/> Logout </button></h1>
+            <h1  className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow '><CgFeed className = "inline text-royalblue-600 hover:text-white"/> <Link to = "/posts">Posts</Link> </h1>
+            <h1 className = ' ml-4 mr-4 mt-3  hover:bg-gulshan-300 px-3 py-3 font-bold rounded text-gulshan-700 hover:text-gray-900 shadow ' ><button  onClick = {Logout} className = "font-bold"> <FiLogOut className = "inline text-red-700  hover:text-white"/> Logout </button></h1>
         </div>
     )
 
