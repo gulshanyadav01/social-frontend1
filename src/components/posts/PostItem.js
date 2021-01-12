@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import { Link } from "react-router-dom"; 
 import { connect } from "react-redux"; 
 import { AiOutlineLike } from "react-icons/ai"; 
-import { addLike, removeLike } from "../store/Actions/post";
+import { addLike, removeLike, deletePost } from "../store/Actions/post";
 import { AiOutlineDislike } from "react-icons/ai";  
 
-const Post = ({ auth,addLike, removeLike,   post: { _id, name, text, avatar, user, likes, comments, date  } }) => {
+
+const Post = ({ auth,addLike, removeLike, deletePost,   post: { _id, name, text, avatar, user, likes, comments, date  } }) => {
     return (
         <div>
             <img src = {avatar} alt = {name} className = "w-20 h-20 rounded-full"/>
@@ -15,7 +16,7 @@ const Post = ({ auth,addLike, removeLike,   post: { _id, name, text, avatar, use
             <h1 >{name}</h1>
             {
                 !auth.loading && user === auth.user._id && (
-                    <button className = "px-2 py-1 bg-red-400 rounded">Delete</button>
+                    <button className = "px-2 py-1 bg-red-400 rounded" onClick = {() => deletePost(_id)}>Delete</button>
                 )
             }
             <div className = "flex">
@@ -36,7 +37,11 @@ const Post = ({ auth,addLike, removeLike,   post: { _id, name, text, avatar, use
 
 Post.propTypes = {
     post:PropTypes.object.isRequired,
-    auth:PropTypes.object.isRequired
+    auth:PropTypes.object.isRequired,
+    addLike: PropTypes.func.isRequired,
+    removeLike:PropTypes.func.isRequired,
+    deletePost: PropTypes.func.isRequired
+
 
 
 }
@@ -45,4 +50,4 @@ const mapStateToProps = state => ({
     
 })
 
-export default connect(mapStateToProps, { addLike, removeLike}) (Post);
+export default connect(mapStateToProps, { addLike, removeLike, deletePost}) (Post);

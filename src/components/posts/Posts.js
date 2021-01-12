@@ -5,7 +5,7 @@ import { getPosts } from "../store/Actions/post"
 import PostItem from "./PostItem"; 
 
 
-const Posts = ({ getPosts, removeLike, addLike,  post: {posts, loading,  }}) => {
+const Posts = ({ getPosts,  post: {posts, loading,  }}) => {
 
    useEffect(() => {
        getPosts()
