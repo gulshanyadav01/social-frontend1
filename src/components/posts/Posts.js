@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from "react-redux"; 
 import { getPosts } from "../store/Actions/post"
 import PostItem from "./PostItem"; 
-
+import PostForm from "./PostForm"
 
 const Posts = ({ getPosts,  post: {posts, loading,  }}) => {
 
@@ -15,6 +15,9 @@ const Posts = ({ getPosts,  post: {posts, loading,  }}) => {
 
     return (
         <div>
+        <div>
+            <PostForm/>
+        </div>
             {
                 loading ? <div> Loading ....</div> :
                  <div>

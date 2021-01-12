@@ -1,6 +1,7 @@
 import axios from "axios"; 
 import { setAlert } from './alert'; 
 import { 
+    ADD_POST,
     DELETE_POST,
     GET_POSTS,
     POST_ERROR,
@@ -81,6 +82,37 @@ export const deletePost = postId => async dispatch => {
         dispatch(setAlert("Post removed", "success"));
 
     }catch(err){
+        dispatch({
+            type:POST_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status}
+        })
+       
+
+    }
+}
+
+//  create post 
+
+export const  addPost = formData => async dispatch => {
+    console.log("hello bhai i am add post")
+    const config = {
+        headers: {
+            "Content-Type":"application/json"
+        }
+    }
+    try{
+        const res = await axios.post("http://localhost:5000/api/post", formData, config ); 
+        dispatch({
+            type: ADD_POST,
+            payload: res.data
+        })
+        dispatch(setAlert("Post Created", "Success")); 
+
+    }catch(err){
+        dispatch({
+            type: POST_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status}
+        })
 
 
     }
