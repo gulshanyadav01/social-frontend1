@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from "react-redux"; 
 // import Moment from "react-moment"; 
 import { deleteEducation} from "../store/Actions/profile"; 
+import { MdDelete } from "react-icons/md"
 
 const Education = ({education, deleteEducation}) => {
     const educations = education.map(exp =>(
@@ -10,7 +11,7 @@ const Education = ({education, deleteEducation}) => {
             <h1 className = "text-gray-800 font-medium m-2">{exp.degree}</h1><hr className = "w-0.5 h-full bg-gray-200"></hr>
             <h1 className = "text-gray-800 font-medium m-2">{exp.school}</h1><hr className = "w-0.5 h-full bg-gray-200"></hr>
             <h1 className = "text-gray-800 font-medium m-2">{exp.fieldOfStudy}</h1><hr className = "w-0.5 h-full bg-gray-200"></hr>
-            <button className = "text-gray-800  px-4 h-8 mt-1 mr-3 bg-red-500 py-2 rounded shadow-xl font-bold hover:bg-red-700 " onClick = {() => deleteEducation(exp._id)} >Delete</button>
+            <button className = "px-3 py-0.5 bg-red-300 font-bold text-black rounded hover:bg-red-500 " onClick = {() => deleteEducation(exp._id)} ><MdDelete className = "w-6 h-6" /></button>
         </div>
         // <tr key = {exp._id} className = " bg-red-500 mt-2 "> 
         //     <div className = "h-20">

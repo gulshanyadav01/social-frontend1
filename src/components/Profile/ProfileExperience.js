@@ -5,7 +5,7 @@ import { HiOutlineOfficeBuilding } from "react-icons/hi"
 const ProfileExperience = ({profile:{experience}}) => {
     return (
         <div className = "w-1/2 bg-white">
-        <h1 className = "m-4 font-bold ">Education</h1>
+        <h1 className = "m-4 font-bold ">experience</h1>
         {/* <h1>{experience.length}</h1> */}
         {
             experience.map((edu) => {
