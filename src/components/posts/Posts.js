@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { getPosts } from "../store/Actions/post"
 import PostItem from "./PostItem"; 
 
-const Posts = ({ getPosts, post: {posts, loading }}) => {
+
+const Posts = ({ getPosts, removeLike, addLike,  post: {posts, loading,  }}) => {
 
    useEffect(() => {
        getPosts()
