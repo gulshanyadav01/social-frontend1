@@ -9,6 +9,8 @@ import { FiLogIn } from "react-icons/fi";
 import { FiLogOut } from "react-icons/fi";
 import { GoRocket } from "react-icons/go"
 import Logo from "../../asset/images/gulshan1.png"; 
+// import {alert} from "./alert";
+// import Alert from "./alert"; 
 
 const  Navbar = ({auth: {isAuthenticated, loading}, logout})  => {
 
@@ -34,6 +36,7 @@ const  Navbar = ({auth: {isAuthenticated, loading}, logout})  => {
         <div className = "w-full">
             <div className = "mt-8 ml-4 mr-2">
                 <h1 className = "text-2xl font-bold text-mango-500" >Social Network</h1>
+                {/* <Alert/> */}
             </div>
             <div className ="w-50 m-4 h-52 border-1 border-gray-100   shadow rounded">
             <div className = "w-50 rounded-t h-8 bg-gradient-to-r from-gulshan-1200 via-pink-300  to-gulshan-1300">

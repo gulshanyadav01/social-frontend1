@@ -39,10 +39,11 @@ const  App = () =>  {
                     <Navbar/>
                   </div>
                   <div className = "w-10/12 h-auto bg-gulshan-50">
-                    <Alert/>
+                  <Alert/>
                     {/* <Upbar/> */}
                     <Route exact path = "/profiles" component = {Profiles}/>
                     <PrivateRoute exact path = "/dashboard" component = {Dashboard}/>
+                    
                     <PrivateRoute exact path = "/createprofile" component = {CreateProfile}/>
                     <PrivateRoute exact path = "/edit-profile" component = {EditProfile}/>
                     <PrivateRoute exaxt path = "/add-experience" component = {AddExperience}/>

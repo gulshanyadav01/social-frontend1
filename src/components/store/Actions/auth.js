@@ -58,6 +58,7 @@ export const register = ({name, email, password, history }) => async dispatch =>
             payload:res.data
         }); 
         dispatch(loadUser());
+        dispatch(setAlert("register successfully", 'success')); 
         history.push("/dashboard")
 
     }
@@ -95,6 +96,7 @@ export const login  = ({ email, password }) => async dispatch =>  {
             payload:res.data
         }); 
         dispatch(loadUser());
+        dispatch(setAlert("login successfully", 'success')); 
 
     }
     catch(err){
@@ -107,6 +109,7 @@ export const login  = ({ email, password }) => async dispatch =>  {
             type: LOGIN_FAIL
 
         })
+        dispatch(setAlert("login fail" ,"fail")); 
     }
 
 
@@ -119,8 +122,10 @@ export const logout = () => dispatch => {
     dispatch({
         type: LOGOUT
     })
+    dispatch(setAlert("logout successfully", 'success')); 
     
     dispatch({
         type:CLEAR_PROFILE
     })
+    // dispatch(setAlert("logout fail", "fail")); 
 }
