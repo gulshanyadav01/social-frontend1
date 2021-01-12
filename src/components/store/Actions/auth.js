@@ -59,7 +59,7 @@ export const register = ({name, email, password, history }) => async dispatch =>
         }); 
         dispatch(loadUser());
         dispatch(setAlert("register successfully", 'success')); 
-        history.push("/dashboard")
+        history.push("/posts")
 
     }
     catch(err){
