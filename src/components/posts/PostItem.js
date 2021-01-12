@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { Link } from "react-router-dom"; 
 import { connect } from "react-redux"; 
 import { AiOutlineLike } from "react-icons/ai"; 
-import { addLike, removeLike } from "../store/Actions/post"; 
+import { addLike, removeLike } from "../store/Actions/post";
+import { AiOutlineDislike } from "react-icons/ai";  
 
 const Post = ({ auth,addLike, removeLike,   post: { _id, name, text, avatar, user, likes, comments, date  } }) => {
     return (
@@ -15,7 +16,10 @@ const Post = ({ auth,addLike, removeLike,   post: { _id, name, text, avatar, use
                     <button className = "px-2 py-1 bg-red-400 rounded">Delete</button>
                 )
             }
-            <AiOutlineLike className = "w-8 h-8 text-royalblue-500 inline" onClick = { () => addLike(_id)}/><h1>{likes.length}</h1>
+            <div className = "flex">
+                <AiOutlineLike className = "w-8 h-8 m-1 text-royalblue-500 inline" onClick = { () => addLike(_id)}/>
+                <AiOutlineDislike className = "w-8 h-8 m-2 text-royalblue-500 inline" onClick = { () => removeLike(_id)}/>
+            </div>
         </div>
     )
 }
