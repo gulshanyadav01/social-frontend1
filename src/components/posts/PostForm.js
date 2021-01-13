@@ -8,7 +8,7 @@ import Logo from "../../asset/images/gulshan1.png";
 const PostForm = ({ addPost }) => {
     const [text, setText ] = useState("");  
     return (
-        <div className = "w-2/5 h-auto m-4 bg-white shadow rounded  ">
+        <div className = "w-6/12 h-auto m-4 bg-white shadow rounded-lg  ">
             {/* <h1 className = "font-bold">Say Something </h1> */}
             <form onSubmit = {(e) => {e.preventDefault();
              addPost({text})
@@ -17,7 +17,7 @@ const PostForm = ({ addPost }) => {
              <div className = "flex m-2">
                  <img src = {Logo} alt = "hello" className = "w-12 h-12 mt-2 ml-2 rounded-full"/>
                  <textarea
-                cols = "35"
+                cols = "50"
                 rows ="2"
                 className = "rounded mt-4 ml-1"
                 onChange = {(e) => setText(e.target.value)} 

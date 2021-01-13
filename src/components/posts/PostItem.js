@@ -11,8 +11,8 @@ import Logo from "../../asset/images/gulshan1.png"
 const Post = ({ auth,addLike, removeLike, deletePost,   post: { _id, name, text, avatar, user, likes, comments, date  } }) => {
     return (
         <div>
-    <div className = "w-2/5 ml-4 mt-4 h-auto bg-white rounded shadow">
-        <div className = "m-2">
+    <div className = "w-6/12 ml-4 mt-4 h-auto bg-white rounded-lg shadow">
+        <div className = "ml-4 mt-3 ">
 
                
                     <div className = "flex">
@@ -20,7 +20,7 @@ const Post = ({ auth,addLike, removeLike, deletePost,   post: { _id, name, text,
                             <h1 className = "font-bold capitalize ml-2 mt-2">{name}</h1>
                     </div>
                             {/* <hr className = "w-full h-0.5 bg-gray-100"></hr> */}
-                    <div className = "w-full h-auto">
+                    <div className = "w-full ml-3 mt-3 h-auto">
                             <h1 >{text}</h1>
                     </div>
                             {/* <hr className = "w-full h-0.5 bg-gray-100"></hr> */}
