@@ -19,6 +19,7 @@ const Posts = ({ getPosts,  post: {posts, loading,  }}) => {
         <div>
             <h1 className = "font-extrabold m-4 text-royalblue-500"><GoPrimitiveDot className = "w-8 h-8 text-royalblue-500 inline"/> Time Line </h1>
             <PostForm/>
+            <hr className = "w-6/12 ml-4 h-0.5 bg-gray-300"></hr>
         </div>
             {
                 loading ? <div> Loading ....</div> :

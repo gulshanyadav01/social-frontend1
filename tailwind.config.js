@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         gulshan:{
-          "50":"#F0F4F6",
+          "50":"#F3F2EF",
           "100":"#c149fa",
           "200":"#FFFFFF",
           "300":"#FE4BAD",

@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import { connect } from "react-redux"; 
 import { addPost } from "../store/Actions/post"; 
 import Logo from "../../asset/images/gulshan1.png"; 
+import { FaTelegram } from "react-icons/fa"
 
 
 const PostForm = ({ addPost }) => {
     const [text, setText ] = useState("");  
     return (
-        <div className = "w-6/12 h-auto m-4 bg-white shadow rounded-lg  ">
+        <div className = "w-6/12 h-auto m-4 bg-white shadow rounded-lg border border-gray-400 ">
             {/* <h1 className = "font-bold">Say Something </h1> */}
             <form onSubmit = {(e) => {e.preventDefault();
              addPost({text})
@@ -25,7 +26,7 @@ const PostForm = ({ addPost }) => {
                 value = {text} />
              </div>
              <hr className = "w-full h-0.5 bg-gray-100"></hr> 
-                <button className = " w-16 h-8 m-2 bg-blue-300 hover:bg-royalblue-500 rounded">Add</button>
+                <button className = "w-10 h-10 rounded-full"><FaTelegram className = " w-10 h-10 rounded-full text-blue-300 m-2  hover:text-royalblue-500 rounded"/></button>
             </form>
            
         </div>
