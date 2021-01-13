@@ -37,7 +37,7 @@ const  App = () =>  {
       <Router>
           <Switch>
             <div className = "flex flex-wrap">
-                  <div className ="w-2/12 h-screen bg-gulshan-200 " >
+                  <div className ="w-2/12 h-screen bg-gulshan-50 " >
                     <Navbar/>
                   </div>
                   <div className = "w-10/12 h-auto bg-gulshan-50">

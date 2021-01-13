@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getPosts } from "../store/Actions/post"
 import PostItem from "./PostItem"; 
 import PostForm from "./PostForm"
+import { GoPrimitiveDot } from "react-icons/go"
 
 const Posts = ({ getPosts,  post: {posts, loading,  }}) => {
 
@@ -16,11 +17,12 @@ const Posts = ({ getPosts,  post: {posts, loading,  }}) => {
     return (
         <div>
         <div>
+            <h1 className = "font-extrabold m-4 text-royalblue-500"><GoPrimitiveDot className = "w-8 h-8 text-royalblue-500 inline"/> Time Line </h1>
             <PostForm/>
         </div>
             {
                 loading ? <div> Loading ....</div> :
-                 <div>
+                 <div className = "w-full">
                     {
                         posts.map((post) =>{
                             return(

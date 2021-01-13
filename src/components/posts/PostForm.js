@@ -25,7 +25,7 @@ const PostForm = ({ addPost }) => {
                 value = {text} />
              </div>
              <hr className = "w-full h-0.5 bg-gray-100"></hr> 
-                <button className = " w-16 h-8 m-2 bg-blue-300 rounded">Add</button>
+                <button className = " w-16 h-8 m-2 bg-blue-300 hover:bg-royalblue-500 rounded">Add</button>
             </form>
            
         </div>

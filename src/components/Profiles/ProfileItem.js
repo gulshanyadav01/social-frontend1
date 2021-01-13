@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Logo from "../../asset/images/gulshan1.png"
 import {Link} from "react-router-dom"
+import Posts from "../posts/Posts"; 
 
 const ProfileItem = ({profile:{ user:{_id, name, avatar}, status, company}}) => {
     return (
@@ -14,6 +15,7 @@ const ProfileItem = ({profile:{ user:{_id, name, avatar}, status, company}}) => 
                 <h1 className = "ml-5 mr-5  capitalize font-bold hover:underline  ">{status}</h1>
                 {/* <button className = "ml-5 bg-red-400 rounded px-2 py-2 ">View Profile</button> */}
             </div>
+            {/* <Posts/> */}
         </div>
     )
 }
