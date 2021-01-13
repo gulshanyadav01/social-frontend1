@@ -2,22 +2,30 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from "react-redux"; 
 import { addPost } from "../store/Actions/post"; 
+import Logo from "../../asset/images/gulshan1.png"; 
 
 
 const PostForm = ({ addPost }) => {
     const [text, setText ] = useState("");  
     return (
-        <div className = "w-96 h-auto m-4 bg-white shadow rounded  ">
-            <h1 className = "font-bold">Say Something </h1>
+        <div className = "w-2/5 h-auto m-4 bg-white shadow rounded  ">
+            {/* <h1 className = "font-bold">Say Something </h1> */}
             <form onSubmit = {(e) => {e.preventDefault();
-             addPost({text})}}>
+             addPost({text})
+             setText("");
+             }}>
+             <div className = "flex m-2">
+                 <img src = {Logo} alt = "hello" className = "w-12 h-12 mt-2 ml-2 rounded-full"/>
                  <textarea
-                cols = "30"
-                rows ="3" 
-                className = "rounded bg-blue-100 m-4 "
+                cols = "35"
+                rows ="2"
+                className = "rounded mt-4 ml-1"
                 onChange = {(e) => setText(e.target.value)} 
+                placeholder = "say something "
                 value = {text} />
-                <button className = "px-2 py-1 bg-blue-300 rounded">submit</button>
+             </div>
+             <hr className = "w-full h-0.5 bg-gray-100"></hr> 
+                <button className = " w-16 h-8 m-2 bg-blue-300 rounded">Add</button>
             </form>
            
         </div>

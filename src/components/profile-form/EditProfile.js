@@ -168,10 +168,11 @@ const EditProfile = ({ profile: {profile, loading }, createProfile, getCurrentPr
                     name = "bio" 
                     value = {bio}
                     onChange = {(e) => onChange(e)}
+                    // onMouseEnter={this.onMouseEnterHandler}
                 /> 
             </div>
             <div className = "flex">
-                <button className = "bg-orange-600 hover:bg-orange-700 font-bold text-white rounded px-3 py-2 m-2" onClick = {()=> setSocialLink(!socialLink)}> social media </button>
+                <button className = "bg-orange-600 hover:bg-orange-700 font-bold text-white rounded px-3 py-2 m-2" onMouseEnter ={()=> setSocialLink(!socialLink)}   > social media </button>
                 <h1 className = "m-4 text-scarlet-600">(Optional)</h1>
             </div>
             {socialLink && <div>

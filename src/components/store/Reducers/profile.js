@@ -15,7 +15,7 @@ const initialState = {
     error:{}
 }
 
-export default function(state = initialState, action){
+export default function profile(state = initialState, action){
     const {type, payload} = action; 
     switch (type) {
         case GET_PROFILE:
@@ -50,6 +50,7 @@ export default function(state = initialState, action){
                 repos:payload,
                 loading: false
             }
+        
         default:
             return state;
     }

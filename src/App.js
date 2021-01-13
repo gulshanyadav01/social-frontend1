@@ -19,6 +19,7 @@ import Upbar from "./components/Layout/Upbar";
 import Profiles from "./components/Profiles/Profiles"; 
 import Profile from "./components/Profile/Profile"
 import Posts from "./components/posts/Posts" 
+import Post from "./components/Post/Post"
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -53,6 +54,7 @@ const  App = () =>  {
                     <Route exact path = "/register" component = {Register}/>
                     <Route exact path = "/login" component = {Login}/>
                     <Route exact path = "/profile/:userId" component = {Profile}/>
+                    <Route exact path  = "/post/:id" component = {Post}/>
                 </div>
             </div>
         </Switch>
