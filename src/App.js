@@ -46,7 +46,7 @@ const  App = () =>  {
                     <Route exact path = "/profiles" component = {Profiles}/>
                     <PrivateRoute exact path = "/dashboard" component = {Dashboard}/>
                     
-                    <PrivateRoute exact path = "/createprofile" component = {CreateProfile}/>
+                    <PrivateRoute exact pth = "/createprofile" component = {CreateProfile}/>
                     <PrivateRoute exact path = "/edit-profile" component = {EditProfile}/>
                     <PrivateRoute exact path = "/add-experience" component = {AddExperience}/>
                     <PrivateRoute exact path = "/add-education" component = {AddEducation}/>
@@ -63,4 +63,4 @@ const  App = () =>  {
   );
 }
 
-export default App
+export default App; 
